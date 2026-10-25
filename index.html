@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#082317">
+<title>HSL Season 3 | Village Cricket League</title>
+<style>
+:root{--bg:#07160f;--panel:#10271a;--panel2:#173624;--green:#52f49a;--muted:#a9c8b4;--line:#2c4a36;--white:#f3fff6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{padding:24px 5%;background:linear-gradient(120deg,#07512f,#0b2116);border-bottom:2px solid var(--green)}
+.brand{display:flex;align-items:center;gap:13px}.logo{font-size:35px}.brand h1{font-size:clamp(25px,5vw,40px);margin:0;color:var(--green);letter-spacing:1px}.brand p{margin:4px 0 0;color:#d0e8d8}
+nav{display:flex;gap:8px;overflow:auto;padding:12px 5%;background:#0d2116;position:sticky;top:0;z-index:3;border-bottom:1px solid var(--line)}nav a{white-space:nowrap;text-decoration:none;color:var(--white);padding:9px 12px;border-radius:8px;font-size:14px}nav a:hover{background:#24583a}
+main{max-width:1150px;margin:auto;padding:22px 4%}.hero{padding:clamp(22px,5vw,42px);border-radius:18px;background:radial-gradient(circle at top right,#1d6b41,#102c1d 60%,#102319);border:1px solid #2e6542}.tag{display:inline-block;background:#c5ffda;color:#07532e;padding:6px 11px;border-radius:30px;font-size:11px;font-weight:800;letter-spacing:.6px}.hero h2{font-size:clamp(28px,5vw,45px);line-height:1.1;margin:16px 0 10px}.hero p,.muted{color:var(--muted);line-height:1.6}.btn{display:inline-block;border:0;border-radius:8px;padding:11px 15px;background:var(--green);color:#062716;font-weight:800;cursor:pointer;text-decoration:none}.btn.secondary{background:#294b36;color:white}.btn.danger{background:#7e342f;color:white}.btn.small{padding:7px 10px;font-size:12px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px}.stat .label{color:var(--muted);font-size:12px}.stat .value{font-size:clamp(19px,3vw,27px);font-weight:850;color:var(--green);margin-top:7px;overflow-wrap:anywhere}
+section{scroll-margin-top:75px;margin-top:30px}h2.section-title{font-size:23px;margin:0 0 14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.card h3{margin:10px 0}.card p{margin:8px 0}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}table{border-collapse:collapse;width:100%;min-width:570px;background:var(--panel);font-size:13px}th,td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--line)}th{background:#1b3b28;color:#8dffb8}tr:last-child td{border-bottom:0}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}label{display:block;font-size:13px;color:#d6eade;margin:9px 0 5px}input,select{width:100%;padding:11px;background:#07160f;color:white;border:1px solid #3a5d44;border-radius:8px}input:focus,select:focus{outline:2px solid #52f49a}.full{grid-column:1/-1}.notice{padding:12px;border-left:3px solid var(--green);background:#10271a;color:#d4e9db;border-radius:5px;font-size:13px;line-height:1.6}.empty{padding:18px;text-align:center;color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:10px}.match-score{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0}.team-score{text-align:center;flex:1}.team-score strong{display:block;font-size:22px}.versus{color:var(--muted);font-size:12px}.subnav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.subnav button{border:1px solid var(--line);background:#11291b;color:white;padding:9px 12px;border-radius:8px;cursor:pointer}.subnav button.active{background:var(--green);color:#062716;font-weight:800}.hidden{display:none!important}footer{text-align:center;padding:28px 5%;margin-top:35px;background:#0d2116;color:var(--muted)}.warning{color:#ffd68a}
+@media(max-width:650px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}header{padding:20px 5%}main{padding:18px 4%}.brand{align-items:flex-start}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="logo">🏏</div><div><h1>HSL SEASON 3</h1><p>Hamare Gaon Ka Cricket Championship</p></div></div>
+</header>
+<nav>
+ <a href="#home">Home</a><a href="#teams">Teams</a><a href="#points">Points Table</a><a href="#matches">Matches</a><a href="#players">Player Stats</a><a href="#admin">Organizer Panel</a>
+</nav>
+<main>
+ <section class="hero" id="home" style="margin-top:0">
+  <span class="tag">SEASON 3 · TOURNAMENT HUB</span>
+  <h2>Apni Team. Apna Maidan.<br>Apna Champion!</h2>
+  <p>Match results, points table, batting runs, bowling wickets aur final tak ka safar — sab ek jagah.</p>
+  <a class="btn" href="#points">View Points Table ↓</a>
+ </section>
+ <div class="stats">
+  <div class="stat"><div class="label">TOTAL TEAMS</div><div class="value" id="totalTeams">0</div></div>
+  <div class="stat"><div class="label">MATCHES PLAYED</div><div class="value" id="totalMatches">0</div></div>
+  <div class="stat"><div class="label">POINTS LEADER</div><div class="value" id="leader">TBD</div></div>
+  <div class="stat"><div class="label">FINALISTS</div><div class="value" id="finalCount">0 / 2</div></div>
+ </div>
+ <section id="teams"><h2 class="section-title">🏆 Tournament Teams</h2><div class="grid" id="teamCards"></div><div class="empty" id="noTeams">Abhi teams add nahi hui. Organizer Panel mein team names add karo.</div></section>
+ <section id="points"><h2 class="section-title">📊 Points Table</h2>
+  <div class="notice">Default points: Win = 2, Tie/No Result = 1 each, Loss = 0. Table points aur wins se rank hoti hai. Local league rules different hon to organizer rules adjust kar sakta hai.</div>
+  <div class="table-wrap" style="margin-top:13px"><table><thead><tr><th>#</th><th>Team</th><th>MP</th><th>W</th><th>L</th><th>T/NR</th><th>Pts</th><th>NRR</th></tr></thead><tbody id="pointsBody"></tbody></table></div>
+  <p class="muted">MP = matches played. NRR is version mein calculate nahi hota; tie-break points phir wins se hai. Agar points/wins same hon, organizer ko manually verify karna hoga.</p>
+ </section>
+ <section id="matches"><h2 class="section-title">🗓️ Match Results</h2><div id="matchList" class="grid"></div><div class="empty" id="noMatches">Match results yahan show honge.</div></section>
+ <section id="players"><h2 class="section-title">⭐ Player Statistics</h2>
+  <div class="grid"><div class="card"><span class="tag">MOST RUNS</span><h3 id="topBatter">Abhi data nahi</h3><p class="muted">Tournament ke top run scorer</p></div><div class="card"><span class="tag">MOST WICKETS</span><h3 id="topBowler">Abhi data nahi</h3><p class="muted">Tournament ke top wicket taker</p></div></div>
+  <div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Player</th><th>Team</th><th>Runs</th><th>Wickets</th></tr></thead><tbody id="playerBody"></tbody></table></div>
+ </section>
+ <section id="admin"><h2 class="section-title">🛠️ Organizer Panel</h2>
+  <div class="notice"><strong>Important:</strong> Ye offline starter website hai. Data isi browser/device mein save hota hai, online sab ko automatically nahi dikhega. Is demo panel par password protection nahi hai. Official public website ke liye hosting + shared database/login setup chahiye.</div>
+  <div class="subnav"><button class="active" onclick="showAdmin('teamAdmin',this)">Add Team</button><button onclick="showAdmin('matchAdmin',this)">Add Result</button><button onclick="showAdmin('playerAdmin',this)">Player Stats</button><button onclick="showAdmin('dataAdmin',this)">Backup</button></div>
+  <div class="card adminPane" id="teamAdmin"><h3>Add Tournament Team</h3><form id="teamForm"><label>Team Name</label><input id="teamName" required maxlength="45" placeholder="e.g. Sher XI"><button class="btn" type="submit">+ Add Team</button></form></div>
+  <div class="card adminPane hidden" id="matchAdmin"><h3>Enter Match Result</h3><p class="muted">Overs 6 ya 8 ho sakte hain. Har innings ke liye actual overs enter karo (jaise 6, 5.4 ya 8). All-out innings mein completed overs use karo.</p>
+   <form id="matchForm"><div class="form-grid">
+    <div class="full"><label>Match Date</label><input id="matchDate" type="date" required></div>
+    <div><label>Team A</label><select id="teamA" required></select></div><div><label>Team B</label><select id="teamB" required></select></div>
+    <div><label>Team A Runs</label><input id="runsA" type="number" min="0" required></div><div><label>Team A Overs Faced</label><input id="oversA" type="number" min="0.1" max="8" step="0.1" required placeholder="e.g. 6"></div>
+    <div><label>Team B Runs</label><input id="runsB" type="number" min="0" required></div><div><label>Team B Overs Faced</label><input id="oversB" type="number" min="0.1" max="8" step="0.1" required placeholder="e.g. 5.4"></div>
+    <div class="full"><label>Overs per innings (scheduled)</label><select id="formatOvers"><option value="6">6 overs</option><option value="8" selected>8 overs</option></select></div>
+   </div><button class="btn" type="submit">Save Match Result</button></form>
+   <p class="muted">Important: Ye simplified score-entry hai. NRR ke liye all-out innings ko full scheduled overs count karne ka rule bhi apply hota hai; is starter mein NRR calculation abhi disabled hai.</p>
+  </div>
+  <div class="card adminPane hidden" id="playerAdmin"><h3>Add Player Performance</h3><form id="playerForm"><label>Player Name</label><input id="playerName" required maxlength="45"><label>Team</label><select id="playerTeam" required></select><div class="form-grid"><div><label>Runs Scored</label><input id="playerRuns" type="number" min="0" value="0" required></div><div><label>Wickets Taken</label><input id="playerWickets" type="number" min="0" max="10" value="0" required></div></div><button class="btn" type="submit">Save Player Stats</button></form><p class="muted">Har match ke baad player ki performance entry add karo. Entries cumulative hain; player ke har match ka separate scorecard abhi included nahi.</p></div>
+  <div class="card adminPane hidden" id="dataAdmin"><h3>Backup & Data</h3><button class="btn" onclick="exportData()">Download Data Backup</button> <label style="margin-top:18px">Restore Backup JSON</label><input id="restoreFile" type="file" accept=".json,application/json"><button class="btn secondary" onclick="restoreData()">Restore Backup</button><p><button class="btn danger" onclick="resetData()">Reset All Data</button></p><p class="muted">Backup safe rakhna. Browser data clear hone par records lost ho sakte hain.</p></div>
+ </section>
+</main>
+<footer><strong>🏏 HSL SEASON 3</strong><p>Hamare Gaon Ka Cricket Championship</p><small>Local tournament website starter · Scores entered by organizer</small></footer>
+<script>
+const KEY='hslSeason3DataV2';
+let db={teams:[],matches:[],players:[]};
+try{const saved=JSON.parse(localStorage.getItem(KEY));if(saved&&Array.isArray(saved.teams)&&Array.isArray(saved.matches)&&Array.isArray(saved.players))db=saved}catch(e){}
+const $=id=>document.getElementById(id);
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db));render()}catch(e){alert('Browser storage full ya unavailable. Backup download karo.');}}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function stats(){const out={};db.teams.forEach(t=>out[t]={mp:0,w:0,l:0,t:0,pts:0});db.matches.forEach(m=>{if(!out[m.a]||!out[m.b])return;const a=out[m.a],b=out[m.b];a.mp++;b.mp++;if(m.ra===m.rb){a.t++;b.t++;a.pts++;b.pts++}else if(m.ra>m.rb){a.w++;b.l++;a.pts+=2}else{b.w++;a.l++;b.pts+=2}});return out}
+function render(){const s=stats(),rank=Object.entries(s).sort((x,y)=>y[1].pts-x[1].pts||y[1].w-x[1].w);$('totalTeams').textContent=db.teams.length;$('totalMatches').textContent=db.matches.length;$('leader').textContent=rank[0]?.[0]||'TBD';$('finalCount').textContent=Math.min(2,rank.length)+' / 2';
+$('teamCards').innerHTML=db.teams.map(t=>`<div class="card"><span class="tag">TEAM</span><h3>🏏 ${esc(t)}</h3><p class="muted">${s[t]?.mp||0} matches · ${s[t]?.pts||0} points</p></div>`).join('');$('noTeams').classList.toggle('hidden',db.teams.length>0);
+$('pointsBody').innerHTML=rank.map(([t,v],i)=>`<tr><td>${i+1}</td><td>${esc(t)}</td><td>${v.mp}</td><td>${v.w}</td><td>${v.l}</td><td>${v.t}</td><td><strong>${v.pts}</strong></td><td>—</td></tr>`).join('');
+$('matchList').innerHTML=[...db.matches].reverse().map(m=>`<div class="card"><span class="tag">${esc(m.date)} · ${m.format} OVERS</span><div class="match-score"><div class="team-score"><strong>${m.ra}</strong>${esc(m.a)}</div><div class="versus">VS</div><div class="team-score"><strong>${m.rb}</strong>${esc(m.b)}</div></div><p class="muted">${m.ra>m.rb?esc(m.a)+' won':m.rb>m.ra?esc(m.b)+' won':'Match tied'} · ${m.oa} ov / ${m.ob} ov</p><button class="btn danger small" onclick="deleteMatch('${m.id}')">Delete Result</button></div>`).join('');$('noMatches').classList.toggle('hidden',db.matches.length>0);
+const ps=[...db.players].sort((a,b)=>b.runs-a.runs),ws=[...db.players].sort((a,b)=>b.wickets-a.wickets);$('topBatter').textContent=ps[0]?`${ps[0].name} · ${ps[0].runs} runs`:'Abhi data nahi';$('topBowler').textContent=ws[0]?`${ws[0].name} · ${ws[0].wickets} wickets`:'Abhi data nahi';$('playerBody').innerHTML=db.players.map(p=>`<tr><td>${esc(p.name)}</td><td>${esc(p.team)}</td><td>${p.runs}</td><td>${p.wickets}</td></tr>`).join('');
+['teamA','teamB','playerTeam'].forEach(id=>{const el=$(id),old=el.value;el.innerHTML='<option value="">Select team</option>'+db.teams.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('');if(db.teams.includes(old))el.value=old;});}
+function showAdmin(id,b){document.querySelectorAll('.adminPane').forEach(p=>p.classList.add('hidden'));$(id).classList.remove('hidden');document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('active'));b.classList.add('active')}
+$('teamForm').addEventListener('submit',e=>{e.preventDefault();const t=$('teamName').value.trim();if(db.teams.some(x=>x.toLowerCase()===t.toLowerCase()))return alert('Ye team pehle se maujood hai.');db.teams.push(t);e.target.reset();save()});
+function validOvers(v,format){if(!Number.isFinite(v)||v<=0)return false;const whole=Math.floor(v),decimal=Math.round((v-whole)*10);return whole<=format&&decimal>=0&&decimal<=5&&(whole<format||decimal===0)&&v<=format}
+$('matchForm').addEventListener('submit',e=>{e.preventDefault();const a=$('teamA').value,b=$('teamB').value,format=+$('formatOvers').value,ra=+$('runsA').value,rb=+$('runsB').value,oa=+$('oversA').value,ob=+$('oversB').value;if(!a||!b||a===b)return alert('Do alag teams select karo.');if(!validOvers(oa,format)||!validOvers(ob,format))return alert('Overs check karo. Misal: 6, 5.4, 8. Decimal digit 0 se 5 tak honi chahiye.');db.matches.push({id:Date.now().toString(),date:$('matchDate').value,a,b,ra,rb,oa,ob,format});e.target.reset();$('formatOvers').value='8';save()});
+$('playerForm').addEventListener('submit',e=>{e.preventDefault();const team=$('playerTeam').value;if(!team)return alert('Pehle team add karo.');db.players.push({name:$('playerName').value.trim(),team,runs:+$('playerRuns').value,wickets:+$('playerWickets').value});e.target.reset();save()});
+function deleteMatch(id){if(confirm('Is match result ko delete karna hai?')){db.matches=db.matches.filter(m=>m.id!==id);save()}}
+function exportData(){const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='HSL-Season-3-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function restoreData(){const f=$('restoreFile').files[0];if(!f)return alert('Pehle backup JSON file select karo.');const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!Array.isArray(x.teams)||!Array.isArray(x.matches)||!Array.isArray(x.players))throw Error();if(confirm('Current data replace ho jayega. Restore karna hai?')){db=x;save();alert('Backup restored.')}}catch(e){alert('Backup file valid nahi hai.')}};r.readAsText(f)}
+function resetData(){if(confirm('Saari teams, matches aur player stats clear ho jayengi. Pehle backup download kar lo. Continue?')){db={teams:[],matches:[],players:[]};save()}}
+render();
+</script>
+</body>
+</html>
